@@ -1,0 +1,29 @@
+@if (chef(); as c) {
+<div class="chef-card">
+    <header class="header-chef">
+        <h1>{{ c.nome | titlecase }}</h1>
+        <span class="stelle-badge">{{ c.stelle }} Stelle Michelin ⭐</span>
+    </header>
+
+    <div class="info-grid">
+        @if (c.ristorante) {
+        <p><strong>Ristorante:</strong> {{ c.ristorante }}</p>
+        }
+        @if (c.citta) {
+        <p><strong>Città:</strong> {{ c.citta | titlecase }}</p>
+        }
+        @if (c.cucina) {
+        <p><strong>Tipo di Cucina:</strong> {{ c.cucina | titlecase }}</p>
+        }
+    </div>
+
+    <hr class="divider" />
+
+    <h3>Biografia</h3>
+    <p class="bio">{{ c.bio }}</p>
+</div>
+} @else {
+<div class="placeholder">
+    <p>👈 Seleziona uno chef dal menu per visualizzarne la scheda completa.</p>
+</div>
+}
