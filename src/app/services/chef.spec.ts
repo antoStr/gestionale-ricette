@@ -1,13 +1,14 @@
 import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
 
-import { Chef } from './chef';
+import { ChefService } from './chef';
 
-describe('Chef', () => {
-  let service: Chef;
+describe('ChefService', () => {
+  let service: ChefService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Chef);
+    TestBed.configureTestingModule({ providers: [provideHttpClient()] });
+    service = TestBed.inject(ChefService);
   });
 
   it('should be created', () => {

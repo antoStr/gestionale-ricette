@@ -44,6 +44,7 @@ export interface Chef {
 
 export interface MenuGiorno {
   giorno: string;
+  ricetta?: Ricetta;
   pranzoId?: number;
   cenaId?: number;
   nota?: string;

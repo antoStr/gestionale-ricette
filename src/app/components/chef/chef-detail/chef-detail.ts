@@ -11,8 +11,8 @@ import { Chef } from '../../../models/interfaces';
   selector: 'app-chef-detail',
   standalone: true,
   imports: [TitleCasePipe],
-  templateUrl: './chef-detail-component.html',
-  styleUrl: './chef-detail-component.css'
+  templateUrl: './chef-detail.html',
+  styleUrl: './chef-detail.css'
 })
 export class ChefDetail {
   private route = inject(ActivatedRoute);

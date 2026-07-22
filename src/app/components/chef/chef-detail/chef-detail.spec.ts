@@ -1,17 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
 
-import { ChefDetailComponent } from './chef-detail-component';
+import { ChefDetail } from './chef-detail';
 
-describe('ChefDetailComponent', () => {
-  let component: ChefDetailComponent;
-  let fixture: ComponentFixture<ChefDetailComponent>;
+describe('ChefDetail', () => {
+  let component: ChefDetail;
+  let fixture: ComponentFixture<ChefDetail>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChefDetailComponent],
+      imports: [ChefDetail],
+      providers: [provideHttpClient(), provideRouter([])],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ChefDetailComponent);
+    fixture = TestBed.createComponent(ChefDetail);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
