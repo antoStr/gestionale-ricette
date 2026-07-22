@@ -1,7 +1,7 @@
 <div class="page">
   <header class="head">
-    <p class="eyebrow">Il tuo ricettario</p>
-    <h1 class="title-lg">Preferite</h1>
+    <p class="eyebrow">📗 Il tuo ricettario</p>
+    <h1 class="title-lg">⭐ Preferite</h1>
     @if (svc.ricettePreferite().length > 0) {
       <p class="meta count">
         {{ svc.ricettePreferite().length }}
@@ -12,27 +12,27 @@
 
   @if (svc.ricettePreferite().length === 0) {
     <div class="empty">
-      <p class="title-md">Non hai ancora salvato nessuna ricetta.</p>
+      <p class="title-md">🤍 Non hai ancora salvato nessuna ricetta.</p>
       <p class="lede mt">
         Apri una ricetta dal catalogo e tocca la stella: la ritrovi qui, pronta per il menù della
         settimana.
       </p>
-      <a routerLink="/ricette" class="btn btn-primary mt-lg">Sfoglia il catalogo</a>
+      <a routerLink="/ricette" class="btn btn-primary mt-lg">📖 Sfoglia il catalogo</a>
     </div>
   } @else {
     <div class="grid-tiles">
       @for (r of svc.ricettePreferite(); track r.id) {
         <article class="tile">
           <h2 class="title-md">
-            <a [routerLink]="['/ricette', r.id]" class="nome">{{ r.nome | titlecase }}</a>
+            <a [routerLink]="['/ricette', r.id]" class="nome">{{ r.emoji }} {{ r.nome | titlecase }}</a>
           </h2>
           <p class="meta riga">
-            {{ r.tempoMin }} min · {{ r.porzioni | number }} porzioni · {{ r.difficolta }}
+            ⏱️ {{ r.tempoMin }} min · 🍽️ {{ r.porzioni | number }} porzioni · 🔥 {{ r.difficolta }}
           </p>
           <div class="azioni">
-            <a [routerLink]="['/ricette', r.id]" class="btn btn-sm btn-quiet">Apri</a>
+            <a [routerLink]="['/ricette', r.id]" class="btn btn-sm btn-quiet">👀 Apri</a>
             <button type="button" (click)="svc.rimuovi(r.id)" class="btn btn-danger">
-              Togli dai preferiti
+              💔 Togli dai preferiti
             </button>
           </div>
         </article>

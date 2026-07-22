@@ -35,7 +35,6 @@ describe('Ricette', () => {
     component = fixture.componentInstance;
     http = TestBed.inject(HttpTestingController);
 
-    // ogni toSignal fa la sua richiesta: ricette.json viene chiesto anche da PreferitiService
     http.match('assets/data/ricette.json').forEach((r) => r.flush(ricette));
     http.match('assets/data/categorie.json').forEach((r) => r.flush([]));
     await fixture.whenStable();

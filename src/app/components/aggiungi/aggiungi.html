@@ -1,7 +1,7 @@
 <div class="page-narrow">
   <header class="head">
-    <p class="eyebrow">Nuova scheda</p>
-    <h1 class="title-lg">Aggiungi una ricetta</h1>
+    <p class="eyebrow">📝 Nuova scheda</p>
+    <h1 class="title-lg">➕ Aggiungi una ricetta</h1>
     <p class="lede mt">
       Scrivi quello che serve per rifarla: il nome, i tempi e i passaggi. Puoi tornare a correggerla
       quando vuoi.
@@ -10,13 +10,13 @@
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
     <section class="gruppo">
-      <p class="eyebrow eyebrow-blu gruppo-titolo">Il piatto</p>
+      <p class="eyebrow eyebrow-blu gruppo-titolo">🍲 Il piatto</p>
 
       <label class="field">
         <span class="label">Nome ricetta</span>
         <input type="text" class="input" formControlName="nome" placeholder="Ragù di casa" />
         @if (erroreIn('nome')) {
-          <span class="error">Serve un nome di almeno 3 caratteri.</span>
+          <span class="error">Serve un nome di almeno 3 caratteri (non solo spazi).</span>
         }
       </label>
 
@@ -53,7 +53,7 @@
     </section>
 
     <section class="gruppo">
-      <p class="eyebrow eyebrow-blu gruppo-titolo">In cucina</p>
+      <p class="eyebrow eyebrow-blu gruppo-titolo">👩‍🍳 In cucina</p>
 
       <div class="coppia">
         <label class="field">
@@ -77,7 +77,7 @@
     </section>
 
     <section class="gruppo">
-      <p class="eyebrow eyebrow-blu gruppo-titolo">La ricetta</p>
+      <p class="eyebrow eyebrow-blu gruppo-titolo">📖 La ricetta</p>
 
       <label class="field">
         <span class="label">Ingredienti</span>
@@ -109,8 +109,8 @@
     </section>
 
     <div class="barra">
-      <button type="submit" class="btn btn-primary">Salva ricetta</button>
-      <a routerLink="/ricette" class="btn btn-quiet">Annulla</a>
+      <button type="submit" class="btn btn-primary">💾 Salva ricetta</button>
+      <a routerLink="/ricette" class="btn btn-quiet">✖️ Annulla</a>
     </div>
   </form>
 </div>

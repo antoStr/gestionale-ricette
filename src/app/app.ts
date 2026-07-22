@@ -11,9 +11,9 @@ export class App {
   protected readonly title = signal('gestionale-ricette');
 
   protected readonly navigazione = [
-    { path: '/ricette', label: 'Ricette' },
-    { path: '/menu-settimanale', label: 'Menù' },
-    { path: '/preferite', label: 'Preferite' },
-    { path: '/chef', label: 'Chef' },
+    { path: '/ricette', label: '📖 Ricette' },
+    { path: '/menu-settimanale', label: '🗓️ Menù' },
+    { path: '/preferite', label: '⭐ Preferite' },
+    { path: '/chef', label: '👨‍🍳 Chef' },
   ];
 }

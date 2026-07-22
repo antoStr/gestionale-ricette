@@ -22,7 +22,6 @@ export class Home {
   ricette = toSignal(this.ricetteSvc.getRicette(), { initialValue: [] as Ricetta[] });
   categorie = toSignal(this.ricetteSvc.getCategorie(), { initialValue: [] as Categoria[] });
 
-  // le 3 ricette pubblicate più di recente
   ultime = computed(() =>
     [...this.ricette()].sort((a, b) => b.pubblicata.localeCompare(a.pubblicata)).slice(0, 3),
   );

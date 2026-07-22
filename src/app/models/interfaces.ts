@@ -4,21 +4,21 @@ export type Pasto = 'pranzo' | 'cena';
 
 export interface Ingrediente {
   nome: string;
-  qta?: number; // opzionale: "q.b." non ha quantità
-  unita?: string; // opzionale: le uova si contano e basta
+  qta?: number;
+  unita?: string;
 }
 
 export interface Ricetta {
   id: number;
   nome: string;
-  categoria: string; // slug che punta a Categoria.slug
+  categoria: string;
   difficolta: Difficolta;
   tempoMin: number;
   porzioni: number;
   chefId: number;
   ingredienti: Ingrediente[];
   procedimento: string[];
-  pubblicata: string; // ISO date, letta dalla pipe date
+  pubblicata: string;
   descrizione?: string;
   emoji?: string;
   vegetariana?: boolean;

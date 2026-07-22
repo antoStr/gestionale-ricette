@@ -1,7 +1,22 @@
 import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  Validators,
+  ValidatorFn,
+  AbstractControl,
+} from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { RicetteService } from '../../services/ricette.service';
+
+/** Scarta i valori fatti di soli spazi e conta i caratteri sul testo ripulito. */
+function testo(minLen: number): ValidatorFn {
+  return (c: AbstractControl) => {
+    const v = (c.value ?? '').toString().trim();
+    if (!v) return { required: true };
+    return v.length < minLen ? { minlength: { requiredLength: minLen } } : null;
+  };
+}
 
 @Component({
   selector: 'app-aggiungi',
@@ -16,16 +31,15 @@ export class Aggiungi {
   private router = inject(Router);
 
   form = this.fb.group({
-    nome: ['', [Validators.required, Validators.minLength(3)]],
+    nome: ['', testo(3)],
     categoria: ['', Validators.required],
     difficolta: ['media', Validators.required],
     tempoMin: [30, [Validators.required, Validators.min(1)]],
     porzioni: [4, [Validators.required, Validators.min(1)]],
-    ingredienti: ['', Validators.required],
-    procedimento: ['', Validators.required],
+    ingredienti: ['', testo(3)],
+    procedimento: ['', testo(3)],
   });
 
-  /** Mostra l'errore solo dopo che l'utente ha toccato il campo. */
   erroreIn(campo: string): boolean {
     const c = this.form.get(campo);
     return !!c && c.invalid && c.touched;
@@ -33,13 +47,20 @@ export class Aggiungi {
 
   onSubmit(): void {
     if (this.form.invalid) {
-      this.form.markAllAsTouched(); // mostra gli errori sui campi
+      this.form.markAllAsTouched();
       return;
     }
 
-    // qui potresti chiamare un metodo del RicetteService per "salvare"
-    // la nuova ricetta (anche solo in memoria, dato che è mock)
-    console.log('Nuova ricetta:', this.form.value);
+    const v = this.form.value;
+    const ricetta = {
+      ...v,
+      nome: v.nome!.trim(),
+      ingredienti: v.ingredienti!.trim(),
+      procedimento: v.procedimento!.trim(),
+    };
+
+    // ponytail: nessuna persistenza, RicetteService legge solo assets/data/*.json
+    console.log('Nuova ricetta:', ricetta);
 
     this.router.navigate(['/ricette']);
   }

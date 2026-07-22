@@ -1,13 +1,13 @@
 <div class="page">
   <header class="head">
-    <p class="eyebrow">Catalogo</p>
-    <h1 class="title-lg">Ricette</h1>
+    <p class="eyebrow">📚 Catalogo</p>
+    <h1 class="title-lg">📖 Ricette</h1>
   </header>
 
   <input
     type="search"
     class="search"
-    placeholder="Cerca un piatto"
+    placeholder="🔍 Cerca un piatto"
     aria-label="Cerca una ricetta"
     [value]="ricerca()"
     (input)="ricerca.set($any($event.target).value)"
@@ -15,7 +15,7 @@
 
   <div class="filtri">
     <div class="riga-filtri">
-      <span class="eyebrow etichetta">Categoria</span>
+      <span class="eyebrow etichetta">🏷️ Categoria</span>
       <div class="chips">
         <button
           type="button"
@@ -23,7 +23,7 @@
           [attr.aria-pressed]="categoria() === 'tutte'"
           (click)="setCategoria('tutte')"
         >
-          Tutte
+          🍽️ Tutte
         </button>
         @for (c of categorie(); track c.id) {
           <button
@@ -32,14 +32,14 @@
             [attr.aria-pressed]="categoria() === c.slug"
             (click)="setCategoria(c.slug)"
           >
-            {{ c.nome | titlecase }}
+            {{ c.emoji }} {{ c.nome | titlecase }}
           </button>
         }
       </div>
     </div>
 
     <div class="riga-filtri">
-      <span class="eyebrow etichetta">Difficoltà</span>
+      <span class="eyebrow etichetta">🔥 Difficoltà</span>
       <div class="chips">
         @for (d of ['tutte', 'facile', 'media', 'difficile']; track d) {
           <button
@@ -61,7 +61,7 @@
 
   @if (filtrate().length === 0) {
     <div class="empty">
-      <p class="title-md">Nessuna ricetta con questi filtri.</p>
+      <p class="title-md">🙈 Nessuna ricetta con questi filtri.</p>
       <p class="lede mt">Prova a togliere la categoria o a cercare un'altra parola.</p>
     </div>
   } @else {
@@ -92,11 +92,11 @@
           </div>
 
           <h2 class="title-md nome">
-            <a [routerLink]="['/ricette', r.id]">{{ r.nome | titlecase }}</a>
+            <a [routerLink]="['/ricette', r.id]">{{ r.emoji }} {{ r.nome | titlecase }}</a>
           </h2>
 
           <p class="meta riga">
-            {{ r.tempoMin }} min · {{ r.porzioni }} porzioni · {{ r.difficolta }}
+            ⏱️ {{ r.tempoMin }} min · 🍽️ {{ r.porzioni }} porzioni · 🔥 {{ r.difficolta }}
           </p>
         </article>
       }

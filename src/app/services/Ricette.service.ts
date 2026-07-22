@@ -3,13 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs'; 
 import { Ricetta, Categoria, Chef } from '../models/interfaces';
 
-//struttura servizio e risorse base
-@Injectable({ providedIn: 'root'}) //creazione di una singola istanza, pattern singleton
+@Injectable({ providedIn: 'root'})
 export class RicetteService {
 
-    private http = inject(HttpClient); //inject di http dentro http per le chiamate
+    private http = inject(HttpClient);
 
-    private readonly BASE = 'assets/data'; //salvataggio percorso base
+    private readonly BASE = 'assets/data';
 
 
     getRicette(): Observable<Ricetta[]> {

@@ -1,9 +1,9 @@
 <div class="page">
   <header class="head">
-    <p class="eyebrow">Sette giorni</p>
-    <h1 class="title-lg titolo">Menù settimanale</h1>
+    <p class="eyebrow">🗓️ Sette giorni</p>
+    <h1 class="title-lg titolo">🍽️ Menù settimanale</h1>
     <p class="meta sommario">
-      {{ pianificati() }}/7 giorni pianificati · {{ tempoTotale() }} min ai fornelli
+      ✅ {{ pianificati() }}/7 giorni pianificati · ⏱️ {{ tempoTotale() }} min ai fornelli
     </p>
   </header>
 
@@ -14,17 +14,17 @@
 
         <div class="contenuto">
           @if (giorno.ricetta; as r) {
-            <a [routerLink]="['/ricette', r.id]" class="piatto">{{ r.nome | titlecase }}</a>
-            <p class="meta riga">{{ r.tempoMin }} min · {{ r.categoria }}</p>
+            <a [routerLink]="['/ricette', r.id]" class="piatto">{{ r.emoji }} {{ r.nome | titlecase }}</a>
+            <p class="meta riga">⏱️ {{ r.tempoMin }} min · 🏷️ {{ r.categoria }}</p>
           } @else {
             <select
               class="select"
               [attr.aria-label]="'Scegli una ricetta per ' + giorno.giorno"
               (change)="assegnaDaId(giorno.giorno, $any($event.target).value)"
             >
-              <option value="">Scegli una ricetta</option>
+              <option value="">➕ Scegli una ricetta</option>
               @for (ricetta of ricetteDisponibili(); track ricetta.id) {
-                <option [value]="ricetta.id">{{ ricetta.nome | titlecase }}</option>
+                <option [value]="ricetta.id">{{ ricetta.emoji }} {{ ricetta.nome | titlecase }}</option>
               }
             </select>
           }
@@ -33,7 +33,7 @@
         <div class="azione">
           @if (giorno.ricetta) {
             <button type="button" class="btn btn-danger" (click)="rimuovi(giorno.giorno)">
-              Togli
+              🗑️ Togli
             </button>
           }
         </div>
@@ -44,7 +44,7 @@
   @if (spesa().length > 0) {
     <section class="section">
       <div class="section-head">
-        <h2 class="title-md">Lista della spesa</h2>
+        <h2 class="title-md">🛒 Lista della spesa</h2>
         <span class="meta">{{ spesa().length }} voci</span>
       </div>
       <ul class="spesa">

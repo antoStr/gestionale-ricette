@@ -1,10 +1,10 @@
 @if (chef(); as c) {
   <article class="scheda">
     <header>
-      <h2 class="title-lg">{{ c.nome | titlecase }}</h2>
+      <h2 class="title-lg">👨‍🍳 {{ c.nome | titlecase }}</h2>
       @if (c.stelle) {
         <p class="meta stelle">
-          {{ c.stelle }} {{ c.stelle === 1 ? 'stella' : 'stelle' }} Michelin
+          ⭐ {{ c.stelle }} {{ c.stelle === 1 ? 'stella' : 'stelle' }} Michelin
         </p>
       }
     </header>
@@ -12,30 +12,30 @@
     <dl class="dati">
       @if (c.ristorante) {
         <div>
-          <dt class="meta">Ristorante</dt>
+          <dt class="meta">🍽️ Ristorante</dt>
           <dd class="dato">{{ c.ristorante }}</dd>
         </div>
       }
       @if (c.citta) {
         <div>
-          <dt class="meta">Città</dt>
+          <dt class="meta">📍 Città</dt>
           <dd class="dato">{{ c.citta | titlecase }}</dd>
         </div>
       }
       @if (c.cucina) {
         <div>
-          <dt class="meta">Cucina</dt>
+          <dt class="meta">🌍 Cucina</dt>
           <dd class="dato">{{ c.cucina | titlecase }}</dd>
         </div>
       }
     </dl>
 
-    <h3 class="eyebrow eyebrow-blu titolo-bio">Biografia</h3>
+    <h3 class="eyebrow eyebrow-blu titolo-bio">📜 Biografia</h3>
     <p class="bio">{{ c.bio }}</p>
   </article>
 } @else {
   <div class="segnaposto">
-    <p class="title-md">Scegli uno chef.</p>
+    <p class="title-md">👈 Scegli uno chef.</p>
     <p class="lede mt">Dall'elenco apri la scheda con ristorante, città e biografia.</p>
   </div>
 }

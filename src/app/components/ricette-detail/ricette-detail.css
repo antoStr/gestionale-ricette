@@ -23,7 +23,7 @@
 
 .dato {
   margin-top: 0.375rem;
-  font-family: 'Bodoni Moda', 'Times New Roman', serif;
+  font-weight: 600;
   font-size: 1.125rem;
 }
 
@@ -68,7 +68,6 @@
   gap: 0.5rem;
 }
 
-/* filetto puntinato tra nome e quantità */
 .ingrediente::after {
   content: '';
   flex: 1;
@@ -98,7 +97,7 @@
 }
 
 .passo-num {
-  font-family: 'Bodoni Moda', 'Times New Roman', serif;
+  font-weight: 600;
   font-size: 1.125rem;
   color: var(--blu);
   font-variant-numeric: lining-nums;

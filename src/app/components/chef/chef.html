@@ -1,19 +1,19 @@
 <div class="page">
   <header class="head">
-    <p class="eyebrow">Chi cucina</p>
-    <h1 class="title-lg titolo">Chef</h1>
+    <p class="eyebrow">🔪 Chi cucina</p>
+    <h1 class="title-lg titolo">👨‍🍳 Chef</h1>
   </header>
 
   <div class="layout">
     <aside class="elenco">
       @if (chefSvc.loading()) {
-        <p class="muted">Caricamento chef...</p>
+        <p class="muted">⏳ Caricamento chef...</p>
       } @else {
         <nav>
           @for (c of chefSvc.chefs(); track c.id) {
             <a [routerLink]="[c.id]" routerLinkActive="is-active" class="voce">
               <span class="voce-nome">{{ c.nome | titlecase }}</span>
-              <span class="meta voce-cucina">{{ c.cucina }}</span>
+              <span class="meta voce-cucina">🌍 {{ c.cucina }}</span>
             </a>
           }
         </nav>

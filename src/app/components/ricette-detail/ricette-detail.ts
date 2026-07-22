@@ -34,7 +34,6 @@ export class RicetteDetail {
     return r && this.chefs().find((c) => c.id === r.chefId);
   });
 
-  // il caricamento è ancora in corso finché la lista è vuota: solo dopo il 404 ha senso
   caricata = computed(() => this.ricette().length > 0);
 
   giorni = computed(() => this.menuSvc.menu().map((g) => g.giorno));

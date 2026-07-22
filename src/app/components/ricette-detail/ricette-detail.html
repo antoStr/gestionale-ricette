@@ -1,12 +1,12 @@
 <div class="page-narrow">
-  <a routerLink="/ricette" class="link-back">Tutte le ricette</a>
+  <a routerLink="/ricette" class="link-back">← Tutte le ricette</a>
 
   @if (ricetta(); as r) {
     <header class="head">
       <p class="eyebrow eyebrow-blu">
-        {{ r.categoria | titlecase }}@if (r.vegetariana) { · Vegetariana }
+        🏷️ {{ r.categoria | titlecase }}@if (r.vegetariana) { · 🌱 Vegetariana }
       </p>
-      <h1 class="title-lg titolo">{{ r.nome | titlecase }}</h1>
+      <h1 class="title-lg titolo">{{ r.emoji }} {{ r.nome | titlecase }}</h1>
 
       @if (r.descrizione) {
         <p class="lede descrizione">{{ r.descrizione }}</p>
@@ -14,20 +14,20 @@
 
       <dl class="scheda">
         <div>
-          <dt class="meta">Tempo</dt>
+          <dt class="meta">⏱️ Tempo</dt>
           <dd class="dato">{{ r.tempoMin }} min</dd>
         </div>
         <div>
-          <dt class="meta">Porzioni</dt>
+          <dt class="meta">🍽️ Porzioni</dt>
           <dd class="dato">{{ r.porzioni }}</dd>
         </div>
         <div>
-          <dt class="meta">Difficoltà</dt>
+          <dt class="meta">🔥 Difficoltà</dt>
           <dd class="dato">{{ r.difficolta | titlecase }}</dd>
         </div>
         @if (chef(); as c) {
           <div>
-            <dt class="meta">Chef</dt>
+            <dt class="meta">👨‍🍳 Chef</dt>
             <dd class="dato">
               <a [routerLink]="['/chef', c.id]" class="link">{{ c.nome | titlecase }}</a>
             </dd>
@@ -52,14 +52,14 @@
               stroke-linejoin="round"
             />
           </svg>
-          {{ preferiti.isPreferito(r.id) ? 'Nei preferiti' : 'Salva nei preferiti' }}
+          {{ preferiti.isPreferito(r.id) ? '⭐ Nei preferiti' : '☆ Salva nei preferiti' }}
         </button>
-        <p class="meta data">Pubblicata il {{ r.pubblicata | date: 'd MMMM yyyy' }}</p>
+        <p class="meta data">📅 Pubblicata il {{ r.pubblicata | date: 'd MMMM yyyy' }}</p>
       </div>
     </header>
 
     <section class="blocco">
-      <h2 class="eyebrow eyebrow-blu blocco-titolo">Metti nel menù</h2>
+      <h2 class="eyebrow eyebrow-blu blocco-titolo">🗓️ Metti nel menù</h2>
       <div class="giorni">
         @for (g of giorni(); track g) {
           <button type="button" class="chip" (click)="aggiungiAlMenu(g)">{{ g }}</button>
@@ -68,7 +68,7 @@
     </section>
 
     <section class="blocco">
-      <h2 class="eyebrow eyebrow-blu blocco-titolo">Ingredienti</h2>
+      <h2 class="eyebrow eyebrow-blu blocco-titolo">🥕 Ingredienti</h2>
       <ul class="ingredienti">
         @for (i of r.ingredienti; track i.nome) {
           <li class="ingrediente">
@@ -86,7 +86,7 @@
     </section>
 
     <section class="blocco">
-      <h2 class="eyebrow eyebrow-blu blocco-titolo">Procedimento</h2>
+      <h2 class="eyebrow eyebrow-blu blocco-titolo">👩‍🍳 Procedimento</h2>
       <ol class="passi">
         @for (passo of r.procedimento; track $index) {
           <li class="passo">
@@ -98,11 +98,11 @@
     </section>
   } @else if (caricata()) {
     <div class="empty vuoto">
-      <p class="title-md">Questa ricetta non esiste.</p>
+      <p class="title-md">🍽️ Questa ricetta non esiste.</p>
       <p class="lede mt">Forse è stata tolta, o l'indirizzo non è giusto.</p>
-      <a routerLink="/ricette" class="btn btn-primary mt-lg">Torna al catalogo</a>
+      <a routerLink="/ricette" class="btn btn-primary mt-lg">📖 Torna al catalogo</a>
     </div>
   } @else {
-    <p class="muted vuoto">Caricamento...</p>
+    <p class="muted vuoto">⏳ Caricamento...</p>
   }
 </div>

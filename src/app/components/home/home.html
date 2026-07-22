@@ -1,6 +1,6 @@
 <div class="page">
   <header class="hero">
-    <p class="eyebrow">Il ricettario di casa</p>
+    <p class="eyebrow">🏠 Il ricettario di casa</p>
     <h1 class="title-xl hero-titolo">
       Cosa si mangia<br />
       questa settimana
@@ -10,34 +10,34 @@
       diventano la lista della spesa.
     </p>
     <div class="hero-azioni">
-      <a routerLink="/ricette" class="btn btn-primary">Sfoglia le ricette</a>
-      <a routerLink="/menu-settimanale" class="btn">Apri il menù</a>
+      <a routerLink="/ricette" class="btn btn-primary">📖 Sfoglia le ricette</a>
+      <a routerLink="/menu-settimanale" class="btn">🗓️ Apri il menù</a>
     </div>
   </header>
 
   <div class="numeri">
     <div class="stat">
       <p class="stat-num">{{ ricette().length }}</p>
-      <p class="stat-label">Ricette</p>
+      <p class="stat-label">🍲 Ricette</p>
     </div>
     <div class="stat">
       <p class="stat-num">{{ categorie().length }}</p>
-      <p class="stat-label">Categorie</p>
+      <p class="stat-label">🏷️ Categorie</p>
     </div>
     <div class="stat">
       <p class="stat-num">{{ preferiti.ricettePreferite().length }}</p>
-      <p class="stat-label">Preferite</p>
+      <p class="stat-label">⭐ Preferite</p>
     </div>
     <div class="stat">
       <p class="stat-num">{{ giorniPianificati() }}<span class="su">/7</span></p>
-      <p class="stat-label">Giorni pianificati</p>
+      <p class="stat-label">🗓️ Giorni pianificati</p>
     </div>
   </div>
 
   <section class="section">
     <div class="section-head">
-      <h2 class="title-md">Categorie</h2>
-      <a routerLink="/ricette" class="link-back">Tutte le ricette</a>
+      <h2 class="title-md">🏷️ Categorie</h2>
+      <a routerLink="/ricette" class="link-back">Tutte le ricette →</a>
     </div>
     <div class="categorie">
       @for (c of categorie(); track c.id) {
@@ -46,7 +46,7 @@
           [queryParams]="{ categoria: c.slug }"
           class="categoria"
         >
-          <span class="categoria-nome">{{ c.nome | titlecase }}</span>
+          <span class="categoria-nome">{{ c.emoji }} {{ c.nome | titlecase }}</span>
           @if (c.descrizione) {
             <span class="categoria-desc">{{ c.descrizione }}</span>
           }
@@ -57,18 +57,18 @@
 
   <section class="section">
     <div class="section-head">
-      <h2 class="title-md">Ultime aggiunte</h2>
-      <a routerLink="/aggiungi" class="link-back">Aggiungi ricetta</a>
+      <h2 class="title-md">🆕 Ultime aggiunte</h2>
+      <a routerLink="/aggiungi" class="link-back">➕ Aggiungi ricetta</a>
     </div>
     @if (ultime().length === 0) {
-      <p class="muted">Caricamento ricette...</p>
+      <p class="muted">⏳ Caricamento ricette...</p>
     } @else {
       <div class="grid-tiles">
         @for (r of ultime(); track r.id) {
           <a [routerLink]="['/ricette', r.id]" class="tile">
             <p class="meta">{{ r.categoria }}</p>
-            <h3 class="title-md tile-nome">{{ r.nome | titlecase }}</h3>
-            <p class="meta tile-meta">{{ r.tempoMin }} min · {{ r.difficolta }}</p>
+            <h3 class="title-md tile-nome">{{ r.emoji }} {{ r.nome | titlecase }}</h3>
+            <p class="meta tile-meta">⏱️ {{ r.tempoMin }} min · 🔥 {{ r.difficolta }}</p>
           </a>
         }
       </div>

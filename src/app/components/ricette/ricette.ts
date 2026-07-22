@@ -20,7 +20,6 @@ export class Ricette {
   ricette = toSignal(this.ricetteSvc.getRicette(), { initialValue: [] as Ricetta[] });
   categorie = toSignal(this.ricetteSvc.getCategorie(), { initialValue: [] as Categoria[] });
 
-  // categoria iniziale dalla query string (?categoria=primo), poi comandata dai bottoni
   private queryParams = toSignal(inject(ActivatedRoute).queryParamMap);
   private scelta = signal<string | null>(null);
   categoria = computed(() => this.scelta() ?? this.queryParams()?.get('categoria') ?? 'tutte');
