@@ -1,6 +1,6 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { RicetteService } from './ricette.service';
+import { RicetteService } from './Ricette.service';
 import { Ricetta } from '../models/interfaces';
 
 @Injectable({ providedIn: 'root' })

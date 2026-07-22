@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { TitleCasePipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MenuService } from '../../services/menu';
-import { RicetteService } from '../../services/ricette.service';
+import { RicetteService } from '../../services/Ricette.service';
 import { Ricetta } from '../../models/interfaces';
 
 @Component({

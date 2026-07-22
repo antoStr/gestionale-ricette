@@ -2,7 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TitleCasePipe, DatePipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { RicetteService } from '../../services/ricette.service';
+import { RicetteService } from '../../services/Ricette.service';
 import { PreferitiService } from '../../services/preferiti.service';
 import { MenuService } from '../../services/menu';
 import { Ricetta, Chef } from '../../models/interfaces';

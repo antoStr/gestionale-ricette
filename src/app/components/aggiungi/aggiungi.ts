@@ -7,7 +7,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { RicetteService } from '../../services/ricette.service';
+import { RicetteService } from '../../services/Ricette.service';
 
 /** Scarta i valori fatti di soli spazi e conta i caratteri sul testo ripulito. */
 function testo(minLen: number): ValidatorFn {
