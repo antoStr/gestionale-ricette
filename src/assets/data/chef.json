@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nome": "nunzia ferrante",
+        "bio": "Cresciuta dietro il banco della salumeria di famiglia, cucina come si cucinava lì: poche cose, comprate bene. Sostiene che una ricetta si giudica dalla lista della spesa, non dal piatto finito.",
+        "stelle": 2,
+        "cucina": "campana",
+        "ristorante": "Trattoria del Pozzo",
+        "citta": "Napoli"
+    },
+    {
+        "id": 2,
+        "nome": "vito marangi",
+        "bio": "Panificatore prima che cuoco. Lavora con farine macinate a pietra e lieviti che tiene in frigo da undici anni. Se una ricetta chiede fretta, la rifiuta.",
+        "stelle": 1,
+        "cucina": "pugliese",
+        "ristorante": "Forno Marangi",
+        "citta": "Altamura"
+    },
+    {
+        "id": 3,
+        "nome": "rosa calo",
+        "bio": "Ha imparato a friggere prima che a scrivere. Cucina siciliana di mercato: quello che c'è al banco alle sette del mattino decide il menu di mezzogiorno.",
+        "stelle": 1,
+        "cucina": "siciliana",
+        "ristorante": "Osteria della Vucciria",
+        "citta": "Palermo"
+    },
+    {
+        "id": 4,
+        "nome": "damiano lo presti",
+        "bio": "Passato dalla cucina di bordo di un peschereccio a quella di un ristorante con tovaglie. Del pesce non butta niente e lo dice a chiunque entri in cucina.",
+        "stelle": 0,
+        "cucina": "di mare",
+        "ristorante": "Il Molo Corto",
+        "citta": "Gallipoli"
+    }
+]
