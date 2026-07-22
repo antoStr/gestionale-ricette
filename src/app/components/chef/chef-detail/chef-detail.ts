@@ -14,7 +14,7 @@ import { Chef } from '../../../models/interfaces';
   templateUrl: './chef-detail-component.html',
   styleUrl: './chef-detail-component.css'
 })
-export class ChefDetailComponent {
+export class ChefDetail {
   private route = inject(ActivatedRoute);
   private chefSvc = inject(ChefService);
 

@@ -9,7 +9,7 @@ import { RicetteService } from '../../services/ricette.service';
   imports: [ReactiveFormsModule],
   templateUrl: './aggiungi.html',
 })
-export class AggiungiComponent {
+export class Aggiungi {
   private fb = inject(FormBuilder);
   private ricetteSvc = inject(RicetteService);
   private router = inject(Router);

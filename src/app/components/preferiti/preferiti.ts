@@ -9,6 +9,6 @@ import { PreferitiService } from '../../services/preferiti.service';
   imports: [RouterLink, TitleCasePipe, DecimalPipe],
   templateUrl: './preferiti.html'
 })
-export class PreferitiComponent {
+export class Preferiti {
   svc = inject(PreferitiService);
 }
