@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "slug": "antipasto",
+    "nome": "antipasto",
+    "emoji": "🫒",
+    "descrizione": "Piccole cose da mettere in tavola mentre l'acqua bolle."
+  },
+  {
+    "id": 2,
+    "slug": "primo",
+    "nome": "primo",
+    "emoji": "🍝",
+    "descrizione": "Paste, risotti e zuppe. Il centro del pranzo."
+  },
+  {
+    "id": 3,
+    "slug": "secondo",
+    "nome": "secondo",
+    "emoji": "🐟",
+    "descrizione": "Pesce, carne e teglie che arrivano calde a tavola."
+  },
+  {
+    "id": 4,
+    "slug": "contorno",
+    "nome": "contorno",
+    "emoji": "🥗",
+    "descrizione": "Verdure di stagione, poco condimento, molto sapore."
+  },
+  {
+    "id": 5,
+    "slug": "dolce",
+    "nome": "dolce",
+    "emoji": "🍰",
+    "descrizione": "Cucchiaio, forno e pasticceria di casa."
+  },
+  {
+    "id": 6,
+    "slug": "lievitati",
+    "nome": "lievitati",
+    "emoji": "🍞",
+    "descrizione": "Impasti che chiedono tempo e una teglia unta bene."
+  }
+]
