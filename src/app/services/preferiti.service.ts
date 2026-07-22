@@ -15,7 +15,7 @@ export class PreferitiService {
 
   // computed: deriva la lista di ricette complete a partire dagli id
   ricettePreferite = computed(() =>
-    this.ricette().filter(r => this.preferitiIds().includes(r.id))
+    this.ricette().filter((r) => this.preferitiIds().includes(r.id)),
   );
 
   isPreferito(id: number): boolean {
@@ -24,19 +24,19 @@ export class PreferitiService {
 
   toggle(id: number): void {
     if (this.isPreferito(id)) {
-      this.preferitiIds.update(ids => ids.filter(x => x !== id));
+      this.preferitiIds.update((ids) => ids.filter((x) => x !== id));
     } else {
-      this.preferitiIds.update(ids => [...ids, id]);
+      this.preferitiIds.update((ids) => [...ids, id]);
     }
   }
 
   aggiungi(id: number): void {
     if (!this.isPreferito(id)) {
-      this.preferitiIds.update(ids => [...ids, id]);
+      this.preferitiIds.update((ids) => [...ids, id]);
     }
   }
 
   rimuovi(id: number): void {
-    this.preferitiIds.update(ids => ids.filter(x => x !== id));
+    this.preferitiIds.update((ids) => ids.filter((x) => x !== id));
   }
 }

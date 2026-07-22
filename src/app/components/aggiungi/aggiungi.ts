@@ -7,7 +7,7 @@ import { RicetteService } from '../../services/ricette.service';
   selector: 'app-aggiungi',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './aggiungi.html'
+  templateUrl: './aggiungi.html',
 })
 export class AggiungiComponent {
   private fb = inject(FormBuilder);
@@ -21,7 +21,7 @@ export class AggiungiComponent {
     tempoMin: [30, [Validators.required, Validators.min(1)]],
     porzioni: [4, [Validators.required, Validators.min(1)]],
     ingredienti: ['', Validators.required],
-    procedimento: ['', Validators.required]
+    procedimento: ['', Validators.required],
   });
 
   onSubmit(): void {
