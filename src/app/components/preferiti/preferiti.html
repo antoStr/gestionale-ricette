@@ -1,0 +1,19 @@
+<h1>Le tue ricette preferite</h1>
+
+@if (svc.ricettePreferite().length === 0) {
+  <p class="vuoto">
+    Non hai ancora nessuna ricetta preferita.
+    <a routerLink="/ricette">Sfoglia il catalogo →</a>
+  </p>
+} @else {
+  <div class="lista-preferiti">
+    @for (r of svc.ricettePreferite(); track r.id) {
+      <div class="card">
+        <h3>{{ r.nome | titlecase }}</h3>
+        <p>{{ r.tempoMin }} min · {{ r.porzioni | number }} porzioni</p>
+        <a [routerLink]="['/ricette', r.id]">Vedi dettaglio →</a>
+        <button (click)="svc.rimuovi(r.id)">Rimuovi</button>
+      </div>
+    }
+  </div>
+}
