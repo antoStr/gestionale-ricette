@@ -1,0 +1,347 @@
+[
+  {
+    "id": 1,
+    "nome": "orecchiette alle cime di rapa",
+    "categoria": "primo",
+    "difficolta": "media",
+    "tempoMin": 40,
+    "porzioni": 4,
+    "chefId": 2,
+    "emoji": "🥬",
+    "vegetariana": false,
+    "descrizione": "Il piatto con cui a Bari si misura chiunque entri in cucina. La rapa cuoce nella stessa acqua della pasta, l'acciuga si scioglie nell'olio e non si aggiunge altro.",
+    "pubblicata": "2026-02-11",
+    "ingredienti": [
+      { "nome": "orecchiette fresche", "qta": 400, "unita": "g" },
+      { "nome": "cime di rapa", "qta": 800, "unita": "g" },
+      { "nome": "filetti di acciuga sott'olio", "qta": 4 },
+      { "nome": "aglio", "qta": 2, "unita": "spicchi" },
+      { "nome": "olio extravergine", "qta": 60, "unita": "ml" },
+      { "nome": "peperoncino" }
+    ],
+    "procedimento": [
+      "Pulisci le cime di rapa tenendo solo le foglie tenere e i fiori. Lava in acqua fredda due volte.",
+      "Butta le rape in acqua bollente salata. Dopo cinque minuti aggiungi le orecchiette nella stessa pentola.",
+      "In una padella larga scalda l'olio con l'aglio schiacciato, il peperoncino e le acciughe. Sciogli le acciughe con il cucchiaio di legno, senza mai far friggere l'aglio.",
+      "Scola pasta e rape insieme tenendo da parte un mestolo d'acqua di cottura. Salta tutto in padella per un minuto, allungando con l'acqua se serve.",
+      "Servi subito, senza formaggio."
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "focaccia barese",
+    "categoria": "lievitati",
+    "difficolta": "media",
+    "tempoMin": 150,
+    "porzioni": 6,
+    "chefId": 2,
+    "emoji": "🍅",
+    "vegetariana": true,
+    "descrizione": "Impasto molle con la patata lessa dentro, pomodorini schiacciati con il pollice e olive sotto sale. La teglia va unta più di quanto sembri ragionevole.",
+    "pubblicata": "2026-03-02",
+    "ingredienti": [
+      { "nome": "semola rimacinata", "qta": 300, "unita": "g" },
+      { "nome": "farina 0", "qta": 200, "unita": "g" },
+      { "nome": "patata lessa schiacciata", "qta": 150, "unita": "g" },
+      { "nome": "acqua tiepida", "qta": 400, "unita": "ml" },
+      { "nome": "lievito di birra fresco", "qta": 7, "unita": "g" },
+      { "nome": "pomodorini", "qta": 300, "unita": "g" },
+      { "nome": "olive baresane", "qta": 100, "unita": "g" },
+      { "nome": "olio extravergine", "qta": 80, "unita": "ml" },
+      { "nome": "sale grosso" }
+    ],
+    "procedimento": [
+      "Sciogli il lievito nell'acqua tiepida. Unisci le farine, la patata e il sale, poi l'acqua poca alla volta.",
+      "Lavora finché l'impasto è liscio e appiccicoso. Copri e lascia lievitare due ore, fino al raddoppio.",
+      "Ungi bene una teglia tonda e stendi l'impasto con le mani unte, senza mattarello.",
+      "Affonda i pomodorini con il pollice, distribuisci le olive, sala e chiudi con un giro d'olio.",
+      "Cuoci a 230 °C per 25 minuti, nella parte bassa del forno. Deve fare crosta sotto."
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "parmigiana di melanzane",
+    "categoria": "secondo",
+    "difficolta": "difficile",
+    "tempoMin": 95,
+    "porzioni": 6,
+    "chefId": 1,
+    "emoji": "🍆",
+    "vegetariana": true,
+    "descrizione": "Melanzane fritte, non grigliate. Il sugo deve essere stretto o la teglia esce acquosa. Si mangia tiepida, mai bollente.",
+    "pubblicata": "2026-01-24",
+    "ingredienti": [
+      { "nome": "melanzane lunghe", "qta": 1.2, "unita": "kg" },
+      { "nome": "passata di pomodoro", "qta": 700, "unita": "g" },
+      { "nome": "fiordilatte", "qta": 400, "unita": "g" },
+      { "nome": "parmigiano grattugiato", "qta": 120, "unita": "g" },
+      { "nome": "basilico" },
+      { "nome": "olio per friggere" }
+    ],
+    "procedimento": [
+      "Taglia le melanzane a fette di mezzo centimetro, mettile sotto sale in uno scolapasta per un'ora.",
+      "Prepara il sugo: olio, aglio, passata, sale. Cuoci quaranta minuti finché non si stringe.",
+      "Asciuga le fette e friggile in olio caldo, poche per volta. Scola su carta.",
+      "Taglia il fiordilatte e fallo perdere il siero in un colino.",
+      "Alterna nella teglia: sugo, melanzane, fiordilatte, parmigiano, basilico. Chiudi con sugo e parmigiano.",
+      "Inforna a 180 °C per 35 minuti. Fai riposare almeno venti minuti prima di tagliarla."
+    ]
+  },
+  {
+    "id": 4,
+    "nome": "caponata siciliana",
+    "categoria": "antipasto",
+    "difficolta": "facile",
+    "tempoMin": 50,
+    "porzioni": 4,
+    "chefId": 3,
+    "emoji": "🫒",
+    "vegetariana": true,
+    "descrizione": "Agrodolce da fare il giorno prima. L'aceto va sfumato a fiamma alta, altrimenti resta in bocca.",
+    "pubblicata": "2026-04-18",
+    "ingredienti": [
+      { "nome": "melanzane", "qta": 700, "unita": "g" },
+      { "nome": "sedano", "qta": 3, "unita": "coste" },
+      { "nome": "cipolla", "qta": 1 },
+      { "nome": "olive verdi denocciolate", "qta": 80, "unita": "g" },
+      { "nome": "capperi sotto sale", "qta": 30, "unita": "g" },
+      { "nome": "passata di pomodoro", "qta": 200, "unita": "g" },
+      { "nome": "aceto di vino bianco", "qta": 50, "unita": "ml" },
+      { "nome": "zucchero", "qta": 20, "unita": "g" }
+    ],
+    "procedimento": [
+      "Friggi le melanzane a cubi finché non sono dorate, scolale su carta.",
+      "Sbollenta il sedano a pezzi per cinque minuti. Nella stessa padella stufa la cipolla.",
+      "Aggiungi sedano, olive, capperi dissalati e passata. Cuoci dieci minuti.",
+      "Unisci le melanzane, poi versa aceto e zucchero e alza la fiamma finché l'odore pungente sparisce.",
+      "Spegni e lascia raffreddare. Si serve a temperatura ambiente, meglio il giorno dopo."
+    ]
+  },
+  {
+    "id": 5,
+    "nome": "cacio e pepe",
+    "categoria": "primo",
+    "difficolta": "difficile",
+    "tempoMin": 20,
+    "porzioni": 2,
+    "chefId": 1,
+    "emoji": "🧀",
+    "vegetariana": true,
+    "descrizione": "Tre ingredienti e nessun posto dove nascondersi. La crema si monta fuori dal fuoco: sopra i 60 °C il pecorino impazzisce.",
+    "pubblicata": "2026-05-06",
+    "ingredienti": [
+      { "nome": "tonnarelli", "qta": 200, "unita": "g" },
+      { "nome": "pecorino romano grattugiato", "qta": 120, "unita": "g" },
+      { "nome": "pepe nero in grani", "qta": 2, "unita": "cucchiaini" }
+    ],
+    "procedimento": [
+      "Pesta il pepe al mortaio e tostalo in padella a secco per trenta secondi.",
+      "Cuoci la pasta in poca acqua poco salata: serve un'acqua ricca di amido.",
+      "In una ciotola fredda lavora il pecorino con qualche cucchiaio di acqua di cottura tiepida fino a ottenere una crema liscia.",
+      "Scola la pasta al dente, falla intiepidire dieci secondi, poi mantecala nella crema fuori dal fuoco.",
+      "Aggiungi il pepe tostato e un ultimo goccio d'acqua se serve lucidità."
+    ]
+  },
+  {
+    "id": 6,
+    "nome": "tiramisu al cucchiaio",
+    "categoria": "dolce",
+    "difficolta": "facile",
+    "tempoMin": 35,
+    "porzioni": 8,
+    "chefId": 1,
+    "emoji": "☕",
+    "vegetariana": true,
+    "descrizione": "Uova pastorizzate con lo sciroppo caldo, così regge due giorni in frigo. Il savoiardo si bagna un secondo per lato, non di più.",
+    "pubblicata": "2026-06-01",
+    "ingredienti": [
+      { "nome": "savoiardi", "qta": 300, "unita": "g" },
+      { "nome": "mascarpone", "qta": 500, "unita": "g" },
+      { "nome": "tuorli", "qta": 5 },
+      { "nome": "zucchero", "qta": 130, "unita": "g" },
+      { "nome": "caffè espresso freddo", "qta": 350, "unita": "ml" },
+      { "nome": "cacao amaro" }
+    ],
+    "procedimento": [
+      "Porta zucchero e due cucchiai d'acqua a 121 °C. Versa a filo sui tuorli in montata.",
+      "Monta finché la massa non è fredda e chiara, poi incorpora il mascarpone a bassa velocità.",
+      "Bagna i savoiardi nel caffè un secondo per lato e fai il primo strato.",
+      "Alterna crema e biscotti, chiudi con la crema livellata.",
+      "Frigo almeno quattro ore. Cacao setacciato solo al momento di servire."
+    ]
+  },
+  {
+    "id": 7,
+    "nome": "risotto allo zafferano",
+    "categoria": "primo",
+    "difficolta": "media",
+    "tempoMin": 35,
+    "porzioni": 4,
+    "chefId": 1,
+    "emoji": "🌾",
+    "vegetariana": true,
+    "descrizione": "Tostatura a secco, brodo sempre caldo, mantecatura con burro freddo. Lo zafferano entra alla fine o perde il profumo.",
+    "pubblicata": "2026-02-28",
+    "ingredienti": [
+      { "nome": "riso carnaroli", "qta": 320, "unita": "g" },
+      { "nome": "brodo di carne", "qta": 1.2, "unita": "l" },
+      { "nome": "pistilli di zafferano", "qta": 0.4, "unita": "g" },
+      { "nome": "burro freddo", "qta": 70, "unita": "g" },
+      { "nome": "parmigiano", "qta": 60, "unita": "g" },
+      { "nome": "cipolla bianca", "qta": 0.5 },
+      { "nome": "vino bianco secco", "qta": 80, "unita": "ml" }
+    ],
+    "procedimento": [
+      "Metti i pistilli in infusione in un mestolo di brodo caldo.",
+      "Stufa la cipolla tritata fine, poi tosta il riso a secco finché il chicco non scotta al tatto.",
+      "Sfuma con il vino e lascialo evaporare del tutto.",
+      "Cuoci aggiungendo brodo caldo un mestolo alla volta, mescolando poco.",
+      "A due minuti dalla fine unisci l'infusione di zafferano.",
+      "Spegni, aggiungi burro freddo e parmigiano e manteca energicamente. Riposo di un minuto prima di impiattare."
+    ]
+  },
+  {
+    "id": 8,
+    "nome": "polpo alla luciana",
+    "categoria": "secondo",
+    "difficolta": "media",
+    "tempoMin": 70,
+    "porzioni": 4,
+    "chefId": 4,
+    "emoji": "🐙",
+    "vegetariana": false,
+    "descrizione": "Cottura in pentola coperta senza aggiungere acqua: il polpo cuoce nella propria. Si controlla con la forchetta, mai con l'orologio.",
+    "pubblicata": "2026-03-19",
+    "ingredienti": [
+      { "nome": "polpo", "qta": 1.2, "unita": "kg" },
+      { "nome": "pomodorini del piennolo", "qta": 400, "unita": "g" },
+      { "nome": "olive di Gaeta", "qta": 80, "unita": "g" },
+      { "nome": "capperi", "qta": 20, "unita": "g" },
+      { "nome": "aglio", "qta": 2, "unita": "spicchi" },
+      { "nome": "prezzemolo" },
+      { "nome": "olio extravergine", "qta": 50, "unita": "ml" }
+    ],
+    "procedimento": [
+      "Pulisci il polpo, togli becco e occhi, lascialo intero.",
+      "In una casseruola scalda olio e aglio, unisci pomodorini schiacciati, olive e capperi.",
+      "Adagia il polpo, copri con un foglio di carta forno e il coperchio. Fiamma bassissima.",
+      "Cuoci 45 minuti senza mai aprire. Poi controlla infilando una forchetta nella parte più spessa.",
+      "Fai riposare nel suo sugo dieci minuti, taglia a pezzi e finisci con prezzemolo crudo."
+    ]
+  },
+  {
+    "id": 9,
+    "nome": "panzanella toscana",
+    "categoria": "contorno",
+    "difficolta": "facile",
+    "tempoMin": 25,
+    "porzioni": 4,
+    "chefId": 3,
+    "emoji": "🍞",
+    "vegetariana": true,
+    "descrizione": "Serve pane raffermo vero, non tostato. Si bagna, si strizza forte e si sbriciola con le mani.",
+    "pubblicata": "2026-06-14",
+    "ingredienti": [
+      { "nome": "pane toscano raffermo", "qta": 300, "unita": "g" },
+      { "nome": "pomodori maturi", "qta": 500, "unita": "g" },
+      { "nome": "cipolla rossa", "qta": 1 },
+      { "nome": "cetriolo", "qta": 1 },
+      { "nome": "basilico" },
+      { "nome": "aceto di vino rosso", "qta": 30, "unita": "ml" },
+      { "nome": "olio extravergine", "qta": 60, "unita": "ml" }
+    ],
+    "procedimento": [
+      "Bagna il pane in acqua fredda per dieci minuti, poi strizzalo bene e sbriciolalo in una ciotola.",
+      "Affetta la cipolla sottile e lasciala venti minuti in acqua e aceto per addolcirla.",
+      "Taglia pomodori e cetriolo a pezzi grossi, sala e lascia perdere un po' d'acqua.",
+      "Unisci tutto, condisci con olio, aceto, sale e basilico spezzato a mano.",
+      "Frigo mezz'ora prima di servire."
+    ]
+  },
+  {
+    "id": 10,
+    "nome": "taralli al finocchietto",
+    "categoria": "lievitati",
+    "difficolta": "media",
+    "tempoMin": 80,
+    "porzioni": 10,
+    "chefId": 2,
+    "emoji": "🥨",
+    "vegetariana": true,
+    "descrizione": "Si sbollentano prima di infornare: è il passaggio che dà il morso croccante. Quando vengono a galla sono pronti per la teglia.",
+    "pubblicata": "2026-04-05",
+    "ingredienti": [
+      { "nome": "farina 00", "qta": 500, "unita": "g" },
+      { "nome": "vino bianco secco", "qta": 150, "unita": "ml" },
+      { "nome": "olio extravergine", "qta": 120, "unita": "ml" },
+      { "nome": "semi di finocchio", "qta": 15, "unita": "g" },
+      { "nome": "sale fino", "qta": 10, "unita": "g" }
+    ],
+    "procedimento": [
+      "Impasta farina, vino, olio, sale e semi di finocchio finché non hai una palla soda e liscia.",
+      "Riposo di trenta minuti coperto da un canovaccio.",
+      "Forma cordoncini di un centimetro, taglia a otto centimetri e chiudi ad anello.",
+      "Sbollenta pochi taralli alla volta: appena vengono a galla, scolali su un telo.",
+      "Cuoci a 200 °C per 25 minuti, finché non sono biondi. Raffredda su griglia."
+    ]
+  },
+  {
+    "id": 11,
+    "nome": "cannoli con ricotta di pecora",
+    "categoria": "dolce",
+    "difficolta": "difficile",
+    "tempoMin": 130,
+    "porzioni": 12,
+    "chefId": 3,
+    "emoji": "🍥",
+    "vegetariana": true,
+    "descrizione": "La ricotta va scolata ventiquattro ore e passata al setaccio, mai frullata. Le scorze si riempiono all'ultimo minuto.",
+    "pubblicata": "2026-05-22",
+    "ingredienti": [
+      { "nome": "farina 00", "qta": 250, "unita": "g" },
+      { "nome": "strutto", "qta": 25, "unita": "g" },
+      { "nome": "marsala", "qta": 60, "unita": "ml" },
+      { "nome": "cacao amaro", "qta": 5, "unita": "g" },
+      { "nome": "ricotta di pecora", "qta": 700, "unita": "g" },
+      { "nome": "zucchero a velo", "qta": 200, "unita": "g" },
+      { "nome": "gocce di cioccolato", "qta": 80, "unita": "g" },
+      { "nome": "olio per friggere" }
+    ],
+    "procedimento": [
+      "Scola la ricotta in un colino per una notte intera, poi passala al setaccio con lo zucchero.",
+      "Impasta farina, cacao, strutto e marsala. Riposo in frigo di un'ora.",
+      "Stendi sottilissimo, ritaglia dischi e avvolgili sui cilindri sigillando con poco albume.",
+      "Friggi in olio a 180 °C finché non si formano le bolle. Scola e sfila i cilindri da caldi.",
+      "Unisci le gocce alla crema e riempi le scorze solo al momento di servire."
+    ]
+  },
+  {
+    "id": 12,
+    "nome": "vellutata di zucca e nocciole",
+    "categoria": "primo",
+    "difficolta": "facile",
+    "tempoMin": 40,
+    "porzioni": 4,
+    "chefId": 4,
+    "emoji": "🎃",
+    "vegetariana": true,
+    "descrizione": "La zucca si arrostisce invece di lessarla: concentra lo zucchero e la vellutata non viene slavata.",
+    "pubblicata": "2026-01-09",
+    "ingredienti": [
+      { "nome": "zucca delica", "qta": 900, "unita": "g" },
+      { "nome": "patata", "qta": 1 },
+      { "nome": "porro", "qta": 1 },
+      { "nome": "brodo vegetale", "qta": 700, "unita": "ml" },
+      { "nome": "nocciole tostate", "qta": 50, "unita": "g" },
+      { "nome": "rosmarino" },
+      { "nome": "olio extravergine", "qta": 40, "unita": "ml" }
+    ],
+    "procedimento": [
+      "Taglia la zucca a fette con la buccia, condisci con olio e rosmarino e arrostisci a 200 °C per 25 minuti.",
+      "Nel frattempo stufa il porro e aggiungi la patata a cubi con metà del brodo.",
+      "Unisci la polpa di zucca raccolta con il cucchiaio e cuoci dieci minuti.",
+      "Frulla aggiungendo brodo caldo fino alla densità che preferisci.",
+      "Servi con nocciole tritate grossolanamente e un filo d'olio a crudo."
+    ]
+  }
+]
