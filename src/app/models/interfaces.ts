@@ -6,10 +6,10 @@ export interface Ricetta {
   tempoMin: number;
   porzioni: number;
   chefId: number;
+  emoji: string;
+  vegetariana: boolean;
+  descrizione?: string;
+  pubblicata: string;
   ingredienti: string[];
   procedimento: string;
-  dataPubblicazione: string;
-  descrizione?: string;
-  immagine?: string;
-  calorie?: number;
 }
