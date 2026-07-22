@@ -1,0 +1,42 @@
+<h1>Aggiungi una nuova ricetta</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <label>Nome ricetta</label>
+  <input type="text" formControlName="nome">
+  @if (form.controls.nome.invalid && form.controls.nome.touched) {
+    <p class="errore">Il nome deve avere almeno 3 caratteri</p>
+  }
+
+  <label>Categoria</label>
+  <select formControlName="categoria">
+    <option value="">-- Scegli --</option>
+    <option value="antipasto">Antipasto</option>
+    <option value="primo">Primo</option>
+    <option value="secondo">Secondo</option>
+    <option value="contorno">Contorno</option>
+    <option value="dolce">Dolce</option>
+    <option value="lievitati">Lievitati</option>
+  </select>
+
+  <label>Difficoltà</label>
+  <div class="radio-group">
+    <label><input type="radio" formControlName="difficolta" value="facile"> Facile</label>
+    <label><input type="radio" formControlName="difficolta" value="media"> Media</label>
+    <label><input type="radio" formControlName="difficolta" value="difficile"> Difficile</label>
+  </div>
+
+  <label>Tempo preparazione (min)</label>
+  <input type="number" formControlName="tempoMin">
+
+  <label>Numero porzioni</label>
+  <input type="number" formControlName="porzioni">
+
+  <label>Ingredienti</label>
+  <textarea formControlName="ingredienti" rows="4"></textarea>
+
+  <label>Procedimento</label>
+  <textarea formControlName="procedimento" rows="6"></textarea>
+
+  <button type="submit">Salva ricetta</button>
+</form>
