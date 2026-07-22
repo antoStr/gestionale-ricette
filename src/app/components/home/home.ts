@@ -12,6 +12,7 @@ import { Ricetta, Categoria } from '../../models/interfaces';
   standalone: true,
   imports: [RouterLink, TitleCasePipe],
   templateUrl: './home.html',
+  styleUrl: './home.css',
 })
 export class Home {
   private ricetteSvc = inject(RicetteService);

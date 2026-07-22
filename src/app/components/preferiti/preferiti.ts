@@ -7,7 +7,8 @@ import { PreferitiService } from '../../services/preferiti.service';
   selector: 'app-preferiti',
   standalone: true,
   imports: [RouterLink, TitleCasePipe, DecimalPipe],
-  templateUrl: './preferiti.html'
+  templateUrl: './preferiti.html',
+  styleUrl: './preferiti.css'
 })
 export class Preferiti {
   svc = inject(PreferitiService);

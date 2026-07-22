@@ -1,88 +1,105 @@
-<div class="min-h-screen bg-slate-50 px-4 py-8">
-  <div class="max-w-4xl mx-auto">
-    <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mb-6">Ricette</h1>
+<div class="page">
+  <header class="head">
+    <p class="eyebrow">Catalogo</p>
+    <h1 class="title-lg">Ricette</h1>
+  </header>
 
-    <!-- FILTRI -->
-    <input
-      type="search"
-      placeholder="Cerca una ricetta..."
-      [value]="ricerca()"
-      (input)="ricerca.set($any($event.target).value)"
-      class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 mb-4 text-slate-700"
-    />
+  <input
+    type="search"
+    class="search"
+    placeholder="Cerca un piatto"
+    aria-label="Cerca una ricetta"
+    [value]="ricerca()"
+    (input)="ricerca.set($any($event.target).value)"
+  />
 
-    <div class="flex flex-wrap gap-2 mb-3">
-      <button
-        (click)="setCategoria('tutte')"
-        [class]="
-          categoria() === 'tutte'
-            ? 'rounded-full bg-slate-800 text-white px-4 py-1.5 text-sm'
-            : 'rounded-full bg-white border border-slate-200 px-4 py-1.5 text-sm text-slate-700'
-        "
-      >
-        Tutte
-      </button>
-      @for (c of categorie(); track c.id) {
+  <div class="filtri">
+    <div class="riga-filtri">
+      <span class="eyebrow etichetta">Categoria</span>
+      <div class="chips">
         <button
-          (click)="setCategoria(c.slug)"
-          [class]="
-            categoria() === c.slug
-              ? 'rounded-full bg-slate-800 text-white px-4 py-1.5 text-sm'
-              : 'rounded-full bg-white border border-slate-200 px-4 py-1.5 text-sm text-slate-700'
-          "
+          type="button"
+          class="chip"
+          [attr.aria-pressed]="categoria() === 'tutte'"
+          (click)="setCategoria('tutte')"
         >
-          {{ c.emoji }} {{ c.nome | titlecase }}
+          Tutte
         </button>
-      }
-    </div>
-
-    <div class="flex gap-2 mb-6">
-      @for (d of ['tutte', 'facile', 'media', 'difficile']; track d) {
-        <button
-          (click)="difficolta.set(d)"
-          [class]="
-            difficolta() === d
-              ? 'rounded-md bg-slate-700 text-white px-3 py-1 text-xs'
-              : 'rounded-md bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600'
-          "
-        >
-          {{ d | titlecase }}
-        </button>
-      }
-    </div>
-
-    <!-- LISTA -->
-    @if (filtrate().length === 0) {
-      <p class="text-slate-400">Nessuna ricetta trovata con questi filtri.</p>
-    } @else {
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        @for (r of filtrate(); track r.id) {
-          <div class="rounded-xl bg-white border border-slate-200 p-4 flex flex-col">
-            <div class="flex items-start justify-between">
-              <span class="text-2xl">{{ r.emoji }}</span>
-              <button
-                (click)="preferiti.toggle(r.id)"
-                [attr.aria-label]="
-                  preferiti.isPreferito(r.id) ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'
-                "
-                class="text-lg"
-              >
-                {{ preferiti.isPreferito(r.id) ? '★' : '☆' }}
-              </button>
-            </div>
-            <h3 class="font-semibold text-slate-800 mt-1">{{ r.nome | titlecase }}</h3>
-            <p class="text-sm text-slate-500">
-              {{ r.tempoMin }} min · {{ r.porzioni }} porzioni · {{ r.difficolta }}
-            </p>
-            <a
-              [routerLink]="['/ricette', r.id]"
-              class="mt-3 text-sm text-slate-700 hover:underline"
-            >
-              Vedi dettaglio →
-            </a>
-          </div>
+        @for (c of categorie(); track c.id) {
+          <button
+            type="button"
+            class="chip"
+            [attr.aria-pressed]="categoria() === c.slug"
+            (click)="setCategoria(c.slug)"
+          >
+            {{ c.nome | titlecase }}
+          </button>
         }
       </div>
-    }
+    </div>
+
+    <div class="riga-filtri">
+      <span class="eyebrow etichetta">Difficoltà</span>
+      <div class="chips">
+        @for (d of ['tutte', 'facile', 'media', 'difficile']; track d) {
+          <button
+            type="button"
+            class="chip"
+            [attr.aria-pressed]="difficolta() === d"
+            (click)="difficolta.set(d)"
+          >
+            {{ d | titlecase }}
+          </button>
+        }
+      </div>
+    </div>
   </div>
+
+  <p class="meta conteggio">
+    {{ filtrate().length }} {{ filtrate().length === 1 ? 'ricetta' : 'ricette' }}
+  </p>
+
+  @if (filtrate().length === 0) {
+    <div class="empty">
+      <p class="title-md">Nessuna ricetta con questi filtri.</p>
+      <p class="lede mt">Prova a togliere la categoria o a cercare un'altra parola.</p>
+    </div>
+  } @else {
+    <div class="grid-tiles">
+      @for (r of filtrate(); track r.id) {
+        <article class="tile">
+          <div class="testa">
+            <span class="meta">{{ r.categoria }}</span>
+            <button
+              type="button"
+              class="star"
+              [attr.aria-pressed]="preferiti.isPreferito(r.id)"
+              [attr.aria-label]="
+                preferiti.isPreferito(r.id) ? 'Togli dai preferiti' : 'Salva nei preferiti'
+              "
+              (click)="preferiti.toggle(r.id)"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3.5l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.9l6.1-.8z"
+                  [attr.fill]="preferiti.isPreferito(r.id) ? 'currentColor' : 'none'"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <h2 class="title-md nome">
+            <a [routerLink]="['/ricette', r.id]">{{ r.nome | titlecase }}</a>
+          </h2>
+
+          <p class="meta riga">
+            {{ r.tempoMin }} min · {{ r.porzioni }} porzioni · {{ r.difficolta }}
+          </p>
+        </article>
+      }
+    </div>
+  }
 </div>

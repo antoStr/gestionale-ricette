@@ -12,6 +12,7 @@ import { Ricetta, Chef } from '../../models/interfaces';
   standalone: true,
   imports: [RouterLink, TitleCasePipe, DatePipe],
   templateUrl: './ricette-detail.html',
+  styleUrl: './ricette-detail.css',
 })
 export class RicetteDetail {
   private route = inject(ActivatedRoute);

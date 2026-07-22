@@ -15,6 +15,5 @@ export class App {
     { path: '/menu-settimanale', label: 'Menù' },
     { path: '/preferite', label: 'Preferite' },
     { path: '/chef', label: 'Chef' },
-    { path: '/aggiungi', label: 'Aggiungi' },
   ];
 }

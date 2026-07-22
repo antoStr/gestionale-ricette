@@ -1,48 +1,44 @@
-.chef-card {
-    padding: 24px;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.scheda {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink);
 }
 
-.header-chef {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
+.stelle {
+  margin-top: 0.75rem;
+  color: var(--blu);
 }
 
-.stelle-badge {
-    background-color: #fff9db;
-    color: #f59f00;
-    border: 1px solid #fcc419;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: bold;
+.dati {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  padding: 1.5rem 0;
+  margin: 2rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.info-grid {
-    display: flex;
-    gap: 20px;
-    color: #495057;
-    margin-bottom: 16px;
+.dato {
+  margin-top: 0.375rem;
+  font-family: 'Bodoni Moda', 'Times New Roman', serif;
+  font-size: 1.125rem;
 }
 
-.divider {
-    border: 0;
-    border-top: 1px solid #f1f3f5;
-    margin: 16px 0;
+.titolo-bio {
+  margin-bottom: 1rem;
 }
 
 .bio {
-    line-height: 1.6;
-    color: #343a40;
-    font-size: 1.05rem;
+  max-width: 60ch;
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 
-.placeholder {
-    padding: 48px;
-    text-align: center;
-    color: #868e96;
+.segnaposto {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.mt {
+  margin-top: 0.75rem;
 }

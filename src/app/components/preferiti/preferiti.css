@@ -1,0 +1,36 @@
+.head {
+  margin-bottom: 2.5rem;
+}
+
+.count {
+  margin-top: 0.75rem;
+}
+
+.mt {
+  margin-top: 0.75rem;
+}
+
+.mt-lg {
+  margin-top: 2rem;
+}
+
+.nome {
+  color: var(--ink);
+}
+
+.nome:hover {
+  color: var(--blu);
+}
+
+.riga {
+  margin-top: 0.625rem;
+}
+
+.azioni {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.75rem;
+}

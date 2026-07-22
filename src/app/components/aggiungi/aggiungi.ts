@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { RicetteService } from '../../services/ricette.service';
 
 @Component({
   selector: 'app-aggiungi',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './aggiungi.html',
+  styleUrl: './aggiungi.css',
 })
 export class Aggiungi {
   private fb = inject(FormBuilder);
@@ -23,6 +24,12 @@ export class Aggiungi {
     ingredienti: ['', Validators.required],
     procedimento: ['', Validators.required],
   });
+
+  /** Mostra l'errore solo dopo che l'utente ha toccato il campo. */
+  erroreIn(campo: string): boolean {
+    const c = this.form.get(campo);
+    return !!c && c.invalid && c.touched;
+  }
 
   onSubmit(): void {
     if (this.form.invalid) {

@@ -1,25 +1,27 @@
-<div class="chef-layout">
-    <!-- SIDEBAR DI SELEZIONE -->
-    <aside class="sidebar">
-        <h2>👨‍🍳 I Nostri Chef</h2>
+<div class="page">
+  <header class="head">
+    <p class="eyebrow">Chi cucina</p>
+    <h1 class="title-lg titolo">Chef</h1>
+  </header>
 
-        @if (chefSvc.loading()) {
-        <p>Caricamento chef in corso...</p>
-        } @else {
-        <nav class="chef-list">
-            @for (c of chefSvc.chefs(); track c.id) {
-            <!-- Link relativo verso /chef/1, /chef/2, ecc. -->
-            <a [routerLink]="[c.id]" routerLinkActive="active" class="chef-item">
-                {{ c.nome | titlecase }}
+  <div class="layout">
+    <aside class="elenco">
+      @if (chefSvc.loading()) {
+        <p class="muted">Caricamento chef...</p>
+      } @else {
+        <nav>
+          @for (c of chefSvc.chefs(); track c.id) {
+            <a [routerLink]="[c.id]" routerLinkActive="is-active" class="voce">
+              <span class="voce-nome">{{ c.nome | titlecase }}</span>
+              <span class="meta voce-cucina">{{ c.cucina }}</span>
             </a>
-            }
+          }
         </nav>
-        }
+      }
     </aside>
 
-    <!-- CONTENUTO PRINCIPALE -->
     <main class="contenuto">
-        <!-- ⚠️ TAG FONDAMENTALE PER IL NESTED ROUTING -->
-        <router-outlet />
+      <router-outlet />
     </main>
+  </div>
 </div>

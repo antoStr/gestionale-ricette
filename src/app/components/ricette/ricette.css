@@ -1,0 +1,65 @@
+.head {
+  margin-bottom: 2rem;
+}
+
+.filtri {
+  margin: 2rem 0;
+}
+
+.riga-filtri {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.etichetta {
+  flex: 0 0 5.5rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.conteggio {
+  margin-bottom: 1rem;
+}
+
+.mt {
+  margin-top: 0.75rem;
+}
+
+.testa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: -0.25rem -0.25rem 0 0;
+}
+
+.nome {
+  margin-top: 0.5rem;
+}
+
+.nome a {
+  color: var(--ink);
+}
+
+.nome a:hover {
+  color: var(--blu);
+}
+
+.riga {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 34rem) {
+  .riga-filtri {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+}

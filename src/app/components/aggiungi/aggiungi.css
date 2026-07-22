@@ -1,0 +1,40 @@
+.head {
+  margin-bottom: 3rem;
+}
+
+.mt {
+  margin-top: 0.75rem;
+}
+
+.gruppo {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.gruppo-titolo {
+  margin-bottom: 1.75rem;
+}
+
+.fieldset {
+  padding: 0;
+  border: 0;
+}
+
+.coppia {
+  display: grid;
+  gap: 1.75rem 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.coppia .field {
+  margin-bottom: 0;
+}
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink);
+}

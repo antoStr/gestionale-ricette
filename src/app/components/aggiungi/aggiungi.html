@@ -1,42 +1,116 @@
-<h1>Aggiungi una nuova ricetta</h1>
+<div class="page-narrow">
+  <header class="head">
+    <p class="eyebrow">Nuova scheda</p>
+    <h1 class="title-lg">Aggiungi una ricetta</h1>
+    <p class="lede mt">
+      Scrivi quello che serve per rifarla: il nome, i tempi e i passaggi. Puoi tornare a correggerla
+      quando vuoi.
+    </p>
+  </header>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <section class="gruppo">
+      <p class="eyebrow eyebrow-blu gruppo-titolo">Il piatto</p>
 
-  <label>Nome ricetta</label>
-  <input type="text" formControlName="nome">
-  @if (form.controls.nome.invalid && form.controls.nome.touched) {
-    <p class="errore">Il nome deve avere almeno 3 caratteri</p>
-  }
+      <label class="field">
+        <span class="label">Nome ricetta</span>
+        <input type="text" class="input" formControlName="nome" placeholder="Ragù di casa" />
+        @if (erroreIn('nome')) {
+          <span class="error">Serve un nome di almeno 3 caratteri.</span>
+        }
+      </label>
 
-  <label>Categoria</label>
-  <select formControlName="categoria">
-    <option value="">-- Scegli --</option>
-    <option value="antipasto">Antipasto</option>
-    <option value="primo">Primo</option>
-    <option value="secondo">Secondo</option>
-    <option value="contorno">Contorno</option>
-    <option value="dolce">Dolce</option>
-    <option value="lievitati">Lievitati</option>
-  </select>
+      <label class="field">
+        <span class="label">Categoria</span>
+        <select class="select" formControlName="categoria">
+          <option value="">Scegli una categoria</option>
+          <option value="antipasto">Antipasto</option>
+          <option value="primo">Primo</option>
+          <option value="secondo">Secondo</option>
+          <option value="contorno">Contorno</option>
+          <option value="dolce">Dolce</option>
+          <option value="lievitati">Lievitati</option>
+        </select>
+        @if (erroreIn('categoria')) {
+          <span class="error">Scegli una categoria.</span>
+        }
+      </label>
 
-  <label>Difficoltà</label>
-  <div class="radio-group">
-    <label><input type="radio" formControlName="difficolta" value="facile"> Facile</label>
-    <label><input type="radio" formControlName="difficolta" value="media"> Media</label>
-    <label><input type="radio" formControlName="difficolta" value="difficile"> Difficile</label>
-  </div>
+      <fieldset class="field fieldset">
+        <legend class="label">Difficoltà</legend>
+        <div class="radio-row">
+          <label class="radio">
+            <input type="radio" formControlName="difficolta" value="facile" /> Facile
+          </label>
+          <label class="radio">
+            <input type="radio" formControlName="difficolta" value="media" /> Media
+          </label>
+          <label class="radio">
+            <input type="radio" formControlName="difficolta" value="difficile" /> Difficile
+          </label>
+        </div>
+      </fieldset>
+    </section>
 
-  <label>Tempo preparazione (min)</label>
-  <input type="number" formControlName="tempoMin">
+    <section class="gruppo">
+      <p class="eyebrow eyebrow-blu gruppo-titolo">In cucina</p>
 
-  <label>Numero porzioni</label>
-  <input type="number" formControlName="porzioni">
+      <div class="coppia">
+        <label class="field">
+          <span class="label">Tempo di preparazione</span>
+          <input type="number" class="input" formControlName="tempoMin" min="1" />
+          <span class="hint">In minuti.</span>
+          @if (erroreIn('tempoMin')) {
+            <span class="error">Indica almeno 1 minuto.</span>
+          }
+        </label>
 
-  <label>Ingredienti</label>
-  <textarea formControlName="ingredienti" rows="4"></textarea>
+        <label class="field">
+          <span class="label">Porzioni</span>
+          <input type="number" class="input" formControlName="porzioni" min="1" />
+          <span class="hint">Per quante persone.</span>
+          @if (erroreIn('porzioni')) {
+            <span class="error">Indica almeno 1 porzione.</span>
+          }
+        </label>
+      </div>
+    </section>
 
-  <label>Procedimento</label>
-  <textarea formControlName="procedimento" rows="6"></textarea>
+    <section class="gruppo">
+      <p class="eyebrow eyebrow-blu gruppo-titolo">La ricetta</p>
 
-  <button type="submit">Salva ricetta</button>
-</form>
+      <label class="field">
+        <span class="label">Ingredienti</span>
+        <textarea
+          class="textarea"
+          formControlName="ingredienti"
+          rows="5"
+          placeholder="500 g di farina&#10;3 uova&#10;sale q.b."
+        ></textarea>
+        <span class="hint">Uno per riga.</span>
+        @if (erroreIn('ingredienti')) {
+          <span class="error">Elenca almeno un ingrediente.</span>
+        }
+      </label>
+
+      <label class="field">
+        <span class="label">Procedimento</span>
+        <textarea
+          class="textarea"
+          formControlName="procedimento"
+          rows="8"
+          placeholder="Impasta farina e uova.&#10;Fai riposare mezz'ora."
+        ></textarea>
+        <span class="hint">Un passaggio per riga.</span>
+        @if (erroreIn('procedimento')) {
+          <span class="error">Scrivi almeno un passaggio.</span>
+        }
+      </label>
+    </section>
+
+    <div class="barra">
+      <button type="submit" class="btn btn-primary">Salva ricetta</button>
+      <a routerLink="/ricette" class="btn btn-quiet">Annulla</a>
+    </div>
+  </form>
+</div>

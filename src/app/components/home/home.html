@@ -1,99 +1,77 @@
-<div class="min-h-screen bg-slate-50 px-4 py-10">
-  <div class="max-w-4xl mx-auto">
-    <!-- HERO -->
-    <header class="mb-10">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-800">🍳 Gestionale Ricette</h1>
-      <p class="mt-2 text-slate-500">
-        Il ricettario di casa: cerca un piatto, salvalo tra i preferiti, mettilo nel menù della
-        settimana.
-      </p>
-    </header>
-
-    <!-- NUMERI -->
-    <div class="grid gap-4 grid-cols-2 md:grid-cols-4 mb-10">
-      <div class="rounded-xl bg-white border border-slate-200 p-4">
-        <p class="text-2xl font-bold text-slate-800">{{ ricette().length }}</p>
-        <p class="text-sm text-slate-500">ricette</p>
-      </div>
-      <div class="rounded-xl bg-white border border-slate-200 p-4">
-        <p class="text-2xl font-bold text-slate-800">{{ categorie().length }}</p>
-        <p class="text-sm text-slate-500">categorie</p>
-      </div>
-      <div class="rounded-xl bg-white border border-slate-200 p-4">
-        <p class="text-2xl font-bold text-slate-800">{{ preferiti.ricettePreferite().length }}</p>
-        <p class="text-sm text-slate-500">preferite</p>
-      </div>
-      <div class="rounded-xl bg-white border border-slate-200 p-4">
-        <p class="text-2xl font-bold text-slate-800">{{ giorniPianificati() }}/7</p>
-        <p class="text-sm text-slate-500">giorni pianificati</p>
-      </div>
+<div class="page">
+  <header class="hero">
+    <p class="eyebrow">Il ricettario di casa</p>
+    <h1 class="title-xl hero-titolo">
+      Cosa si mangia<br />
+      questa settimana
+    </h1>
+    <p class="lede hero-lede">
+      Cerca un piatto, tienilo da parte tra le preferite e mettilo nel menù. Gli ingredienti
+      diventano la lista della spesa.
+    </p>
+    <div class="hero-azioni">
+      <a routerLink="/ricette" class="btn btn-primary">Sfoglia le ricette</a>
+      <a routerLink="/menu-settimanale" class="btn">Apri il menù</a>
     </div>
+  </header>
 
-    <!-- SCORCIATOIE -->
-    <div class="flex flex-wrap gap-3 mb-10">
-      <a
-        routerLink="/ricette"
-        class="rounded-lg bg-slate-800 px-5 py-2.5 text-white font-medium hover:bg-slate-700 transition"
-      >
-        Sfoglia le ricette
-      </a>
-      <a
-        routerLink="/menu-settimanale"
-        class="rounded-lg bg-white border border-slate-300 px-5 py-2.5 text-slate-700 font-medium hover:bg-slate-100 transition"
-      >
-        Menù settimanale
-      </a>
-      <a
-        routerLink="/preferite"
-        class="rounded-lg bg-white border border-slate-300 px-5 py-2.5 text-slate-700 font-medium hover:bg-slate-100 transition"
-      >
-        Preferite
-      </a>
-      <a
-        routerLink="/chef"
-        class="rounded-lg bg-white border border-slate-300 px-5 py-2.5 text-slate-700 font-medium hover:bg-slate-100 transition"
-      >
-        Chef
-      </a>
-      <a
-        routerLink="/aggiungi"
-        class="rounded-lg bg-white border border-slate-300 px-5 py-2.5 text-slate-700 font-medium hover:bg-slate-100 transition"
-      >
-        + Aggiungi ricetta
-      </a>
+  <div class="numeri">
+    <div class="stat">
+      <p class="stat-num">{{ ricette().length }}</p>
+      <p class="stat-label">Ricette</p>
     </div>
+    <div class="stat">
+      <p class="stat-num">{{ categorie().length }}</p>
+      <p class="stat-label">Categorie</p>
+    </div>
+    <div class="stat">
+      <p class="stat-num">{{ preferiti.ricettePreferite().length }}</p>
+      <p class="stat-label">Preferite</p>
+    </div>
+    <div class="stat">
+      <p class="stat-num">{{ giorniPianificati() }}<span class="su">/7</span></p>
+      <p class="stat-label">Giorni pianificati</p>
+    </div>
+  </div>
 
-    <!-- CATEGORIE -->
-    <h2 class="text-lg font-semibold text-slate-700 mb-3">Categorie</h2>
-    <div class="flex flex-wrap gap-2 mb-10">
+  <section class="section">
+    <div class="section-head">
+      <h2 class="title-md">Categorie</h2>
+      <a routerLink="/ricette" class="link-back">Tutte le ricette</a>
+    </div>
+    <div class="categorie">
       @for (c of categorie(); track c.id) {
         <a
           [routerLink]="['/ricette']"
           [queryParams]="{ categoria: c.slug }"
-          class="rounded-full bg-white border border-slate-200 px-4 py-1.5 text-sm text-slate-700 hover:bg-slate-100"
+          class="categoria"
         >
-          {{ c.emoji }} {{ c.nome | titlecase }}
+          <span class="categoria-nome">{{ c.nome | titlecase }}</span>
+          @if (c.descrizione) {
+            <span class="categoria-desc">{{ c.descrizione }}</span>
+          }
         </a>
       }
     </div>
+  </section>
 
-    <!-- ULTIME RICETTE -->
-    <h2 class="text-lg font-semibold text-slate-700 mb-3">Ultime aggiunte</h2>
+  <section class="section">
+    <div class="section-head">
+      <h2 class="title-md">Ultime aggiunte</h2>
+      <a routerLink="/aggiungi" class="link-back">Aggiungi ricetta</a>
+    </div>
     @if (ultime().length === 0) {
-      <p class="text-slate-400">Caricamento ricette...</p>
+      <p class="muted">Caricamento ricette...</p>
     } @else {
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid-tiles">
         @for (r of ultime(); track r.id) {
-          <a
-            [routerLink]="['/ricette', r.id]"
-            class="rounded-xl bg-white border border-slate-200 p-4 hover:border-slate-400 transition block"
-          >
-            <p class="text-2xl">{{ r.emoji }}</p>
-            <h3 class="font-semibold text-slate-800 mt-1">{{ r.nome | titlecase }}</h3>
-            <p class="text-sm text-slate-500">{{ r.tempoMin }} min · {{ r.difficolta }}</p>
+          <a [routerLink]="['/ricette', r.id]" class="tile">
+            <p class="meta">{{ r.categoria }}</p>
+            <h3 class="title-md tile-nome">{{ r.nome | titlecase }}</h3>
+            <p class="meta tile-meta">{{ r.tempoMin }} min · {{ r.difficolta }}</p>
           </a>
         }
       </div>
     }
-  </div>
+  </section>
 </div>

@@ -1,29 +1,41 @@
 @if (chef(); as c) {
-<div class="chef-card">
-    <header class="header-chef">
-        <h1>{{ c.nome | titlecase }}</h1>
-        <span class="stelle-badge">{{ c.stelle }} Stelle Michelin ⭐</span>
+  <article class="scheda">
+    <header>
+      <h2 class="title-lg">{{ c.nome | titlecase }}</h2>
+      @if (c.stelle) {
+        <p class="meta stelle">
+          {{ c.stelle }} {{ c.stelle === 1 ? 'stella' : 'stelle' }} Michelin
+        </p>
+      }
     </header>
 
-    <div class="info-grid">
-        @if (c.ristorante) {
-        <p><strong>Ristorante:</strong> {{ c.ristorante }}</p>
-        }
-        @if (c.citta) {
-        <p><strong>Città:</strong> {{ c.citta | titlecase }}</p>
-        }
-        @if (c.cucina) {
-        <p><strong>Tipo di Cucina:</strong> {{ c.cucina | titlecase }}</p>
-        }
-    </div>
+    <dl class="dati">
+      @if (c.ristorante) {
+        <div>
+          <dt class="meta">Ristorante</dt>
+          <dd class="dato">{{ c.ristorante }}</dd>
+        </div>
+      }
+      @if (c.citta) {
+        <div>
+          <dt class="meta">Città</dt>
+          <dd class="dato">{{ c.citta | titlecase }}</dd>
+        </div>
+      }
+      @if (c.cucina) {
+        <div>
+          <dt class="meta">Cucina</dt>
+          <dd class="dato">{{ c.cucina | titlecase }}</dd>
+        </div>
+      }
+    </dl>
 
-    <hr class="divider" />
-
-    <h3>Biografia</h3>
+    <h3 class="eyebrow eyebrow-blu titolo-bio">Biografia</h3>
     <p class="bio">{{ c.bio }}</p>
-</div>
+  </article>
 } @else {
-<div class="placeholder">
-    <p>👈 Seleziona uno chef dal menu per visualizzarne la scheda completa.</p>
-</div>
+  <div class="segnaposto">
+    <p class="title-md">Scegli uno chef.</p>
+    <p class="lede mt">Dall'elenco apri la scheda con ristorante, città e biografia.</p>
+  </div>
 }
